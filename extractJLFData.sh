@@ -2,12 +2,12 @@
 
 #############################################################################
 # Use this script to extract ROI volumes after running antsJointLabelFusion #
-# It exports the volumes into a .csv that can be used in R					#
+# It exports the volumes into a .csv that can be used in R		    #
 #############################################################################
 
-							#########################
-							# Edit these variables: #
-							#########################
+#########################
+# Edit these variables: #
+#########################
 
 # Note: You will also need to edit the c3d command to match how your directories are set up.
 
@@ -149,12 +149,12 @@ do
 		fi
 		
 ###########################################################################
-# Remove ROI's that don't always appear.								  #
-# NOTE: There may be other ROI's that cause problems. 					  #
+# Remove ROI's that don't always appear.				  #
+# NOTE: There may be other ROI's that cause problems. 			  #
 # Pay attention to your output files and adjust these values accordingly. #
-#																		  #
-# These commands remove the following ROI's:							  #
-# Left_Vessel, Right_Vessel, and Optic_Chiasm.							  #
+#									  #
+# These commands remove the following ROI's:			  	  #
+# Left_Vessel, Right_Vessel, and Optic_Chiasm.				  #
 ###########################################################################
 
 	if [[ "${arr[$num]}" == "30" ]]
