@@ -139,15 +139,15 @@ lineNum=0
 while [ $lineNum -lt 100 ]
 do
 
-	if [ $lineNum -le 1 ]
-	then
-		num=$((lineNum*8))
-		num2=$((num+6))
-	else
-		num=$((lineNum*10-2))
-	num2=$((num+6))
-		fi
-		
+if [ $lineNum -le 1 ]
+then
+num=$((lineNum*8))
+num2=$((num+6))
+else
+num=$((lineNum*10-2))
+num2=$((num+6))
+fi
+	
 ###########################################################################
 # Remove ROI's that don't always appear.				  #
 # NOTE: There may be other ROI's that cause problems. 			  #
@@ -157,22 +157,22 @@ do
 # Left_Vessel, Right_Vessel, and Optic_Chiasm.				  #
 ###########################################################################
 
-	if [[ "${arr[$num]}" == "30" ]]
-	then
-		:
-	elif [[ "${arr[$num]}" == "62" ]]
-	then
-		:
-	elif [[ "${arr[$num]}" == "85" ]]
-	then
-		:
-	elif [[ "${arr[$num]}" == "LabelID" ]]
-	then
-		:
-	else
-	lineArray[$lineNum]=${arr[$num2]}
-	fi
-	lineNum=$((lineNum+1))
+if [[ "${arr[$num]}" == "30" ]]
+then
+:
+elif [[ "${arr[$num]}" == "62" ]]
+then
+:
+elif [[ "${arr[$num]}" == "85" ]]
+then
+:
+elif [[ "${arr[$num]}" == "LabelID" ]]
+then
+:
+else
+lineArray[$lineNum]=${arr[$num2]}
+fi
+lineNum=$((lineNum+1))
 done
 
 #############
